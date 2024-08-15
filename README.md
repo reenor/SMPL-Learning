@@ -91,7 +91,7 @@ set "PATH_TO_PROJECT=D:\Projects\SMPL-Learning"
 ```
 
 ```Shell
-cd /d %^PATH_TO_PROJECT% && pip install -r requirements.txt
+cd /d %PATH_TO_PROJECT% && pip install -r requirements.txt
 ```
 
 ### 5. Input data
