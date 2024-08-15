@@ -82,18 +82,16 @@ python
 ```
 
 ### 4. Repository
-Clone Repository
+Clone this repository
 
+Install dependencies
 ```Shell
-set "PATH_TO_PROJECT=D:\Projects\SMPL-Learning"
-```
-
-```Shell
-cd /d %PATH_TO_PROJECT% && pip install -r requirements.txt
+set "PATH_TO_PROJECT=D:\Projects\SMPL-Learning" && call cd /d %^PATH_TO_PROJECT% && pip install -r requirements.txt
 ```
 
 ### 5. Input data
 
+Create 2 folders
 ```Shell
 mkdir %PATH_TO_PROJECT%\data\models\smpl\origin && mkdir %PATH_TO_PROJECT%\data\models\smpl\removed_chumpy_objects
 ```
