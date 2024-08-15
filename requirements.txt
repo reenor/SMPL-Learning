@@ -1,3 +1,4 @@
 tqdm
 scipy
 smplx==0.1.28
+git+https://github.com/mattloper/chumpy.git
