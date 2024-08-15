@@ -81,53 +81,40 @@ python
 >>> torch.zeros(1).cuda()
 ```
 
-### 4. VIBE
+### 4. Repository
+```Shell
+git clone https://github.com/reenor/SMPL-Learning.git
+```
 
-Install VIBE
 ```Shell
 set "PATH_TO_PROJECT=D:\Projects\SMPL-Learning"
 ```
+
 ```Shell
-mkdir %PATH_TO_PROJECT% && cd /d %PATH_TO_PROJECT%
-```
-```Shell
-git clone https://github.com/reenor/VIBE
-```
-```Shell
-cd /d %PATH_TO_VIBE% && pip install -r requirements.txt
+cd /d %^PATH_TO_PROJECT% && pip install -r requirements.txt
 ```
 
 ### 5. Input data
 
-Download trained models and sample video
 ```Shell
-mkdir %PATH_TO_VIBE%\data && cd /d %PATH_TO_VIBE%\data
+mkdir %PATH_TO_PROJECT%\data\models\smpl\origin && mkdir %PATH_TO_PROJECT%\data\models\smpl\removed_chumpy_objects
 ```
-```Shell
-gdown "https://drive.google.com/uc?id=1untXhYOLQtpNEy4GTY_0fL_H-k6cTf_r&confirm=t"
-```
-```Shell
-tar -xf vibe_data.zip
-```
-```Shell
-mkdir %PATH_TO_PROJECT%\vibe_input
-```
-```Shell
-move %PATH_TO_VIBE%\data\vibe_data\sample_video.mp4 %PATH_TO_PROJECT%\vibe_input
+Download pretrained SMPL models at https://smpl.is.tue.mpg.de/download.php and extract model files according to the following structure:
+
+```bash
+models
+├── smpl
+│   ├── origin
+|       ├── basicmodel_f_lbs_10_207_0_v1.1.0.pkl
+|       ├── basicmodel_m_lbs_10_207_0_v1.1.0.pkl
+|       ├── basicmodel_neutral_lbs_10_207_0_v1.1.0.pkl
+│   ├── removed_chumpy_objects
+├── xxx
 ```
 
-Torch model and yolo config
+Run the following to remove any Chumpy objects from the neutral model data
 ```Shell
-mkdir %HOMEDRIVE%\%HOMEPATH%\.torch\models
-```
-```Shell
-move %PATH_TO_VIBE%\data\vibe_data\yolov3.weights %HOMEDRIVE%\%HOMEPATH%\.torch\models
-```
-```Shell
-mkdir %HOMEDRIVE%\%HOMEPATH%\.torch\config
-```
-```Shell
-move %PATH_TO_VIBE%\yolov3.cfg %HOMEDRIVE%\%HOMEPATH%\.torch\config
+python remove_chumpy_objects.py --input-models %PATH_TO_PROJECT%\data\models\smpl\origin\basicmodel_neutral_lbs_10_207_0_v1.1.0.pkl --output-folder %PATH_TO_PROJECT%\data\models\smpl\removed_chumpy_objects
 ```
 
 ## References
