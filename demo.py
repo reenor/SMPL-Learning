@@ -3,7 +3,7 @@ import torch
 from smplx import SMPL
 
 ### Configuration ###
-SMPL_MODEL_DIR='D:\\Projects\\SMPL-Learning\\data\\model\\'
+SMPL_MODEL_DIR='D:/Projects/SMPL-Learning/data/models/smpl/origin/basicmodel_neutral_lbs_10_207_0_v1.1.0.pkl'
 #####################
 
 
