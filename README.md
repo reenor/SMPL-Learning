@@ -1,20 +1,19 @@
-# VIBE: Video Inference for Human Body Pose and Shape Estimation
-[Official Project Link](https://github.com/mkocabas/VIBE)
+# SMPL-Learning
 
 ## Running
 Launch Anaconda Prompt as administrator
 
 Activate the virtual environment
 ```Shell
-set "PATH_TO_VENV=C:\venvs\vibe" && conda activate %PATH_TO_VENV%
+set "PATH_TO_VENV=C:\venvs\smpl-learning" && conda activate %PATH_TO_VENV%
 ```
-Navigate to VIBE
+Navigate to project
 ```Shell
-set "PATH_TO_VIBE=D:\Projects\Repos-VIBE\VIBE" && call cd /d %^PATH_TO_VIBE%
+set "PATH_TO_PROJECT=D:\Projects\SMPL-Learning" && call cd /d %^PATH_TO_PROJECT%
 ```
 Execute
 ```Shell
-python demo_windows.py --vid_file ../vibe_input/sample_video.mp4 --output_folder ../vibe_output --display
+python demo.py
 ```
 
 ## Windows Installation
@@ -24,9 +23,6 @@ We need to install the following tools:
 - Python: https://www.python.org/downloads/
 - GIT: https://git-scm.com/download/win
 - MSVC++ Redist (14.40.33810.0) : https://learn.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist?view=msvc-170
-- FFMPEG (7.0.1) : https://www.gyan.dev/ffmpeg/builds/#release-builds
-> Note: after extracted FFMPEG, add folder `bin` to the `Path` in System Environment Variables
-
 - Miniconda: https://docs.anaconda.com/miniconda/
 
 ### 0Bis. CUDA-powered GPU 
@@ -47,7 +43,7 @@ Launch Anaconda Prompt as administrator
 
 Create a place to store virtual environment
 ```Shell
-set "PATH_TO_VENV=C:\venvs\vibe"
+set "PATH_TO_VENV=C:\venvs\smpl-learning"
 ```
 Create a virtual environment
 ```Shell
@@ -86,15 +82,10 @@ python
 ```
 
 ### 4. VIBE
-For downloading YouTube videos
-```Shell
-pip install mkl intel-openmp
-pip install git+https://github.com/giacaglia/pytube.git --upgrade
-```
 
 Install VIBE
 ```Shell
-set "PATH_TO_PROJECT=D:\Projects\Repos-VIBE" && set "PATH_TO_VIBE=D:\Projects\Repos-VIBE\VIBE"
+set "PATH_TO_PROJECT=D:\Projects\SMPL-Learning"
 ```
 ```Shell
 mkdir %PATH_TO_PROJECT% && cd /d %PATH_TO_PROJECT%
