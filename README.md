@@ -82,9 +82,7 @@ python
 ```
 
 ### 4. Repository
-```Shell
-git clone https://github.com/reenor/SMPL-Learning.git
-```
+Clone Repository
 
 ```Shell
 set "PATH_TO_PROJECT=D:\Projects\SMPL-Learning"
@@ -118,7 +116,6 @@ python remove_chumpy_objects.py --input-models %PATH_TO_PROJECT%\data\models\smp
 ```
 
 ## References
-- https://github.com/carlosedubarreto/vibe_win_install
 - CUDA Compute Capability, https://github.com/prabindh/mygpu?tab=readme-ov-file
 - Spyder, https://medium.com/@apremgeorge/using-conda-python-environments-with-spyder-ide-and-jupyter-notebooks-in-windows-4e0a905aaac5
 
