@@ -8,8 +8,19 @@ SMPL_MODEL_DIR='D:/Projects/SMPL-Learning/data/models/smpl/removed_chumpy_object
 
 
 def main():
-    device = torch.device('cuda') if torch.cuda.is_available() else torch.device('cpu')
-    smpl_object = SMPL(model_path=SMPL_MODEL_DIR, gender='neutral')
+    batch_size = 1
+
+    # Generate random pose and shape parameters
+    global_orient = torch.zeros(batch_size, 3)
+    pose_params = torch.rand(batch_size, 69) * 0.2
+    shape_params = torch.rand(batch_size, 300) * 0.03
+    
+    smpl_object = SMPL(model_path=SMPL_MODEL_DIR,
+                        body_pose=pose_params,
+                        global_orient=global_orient,
+                        betas=shape_params, num_betas=300)
+    # smpl_object = SMPL(model_path=SMPL_MODEL_DIR)
+
     smpl_output = smpl_object.forward()
     joints = smpl_output.joints
     vertices = smpl_output.vertices
